@@ -20,7 +20,7 @@
 		display: inline-flex;
 		align-items: center;
 	}
-	&__menu {
+	&__menu-icon {
 		@media (min-width: 768px) {
 			position: relative;
 			display: flex;
@@ -74,7 +74,7 @@
 	}
 }
 
-.menu {
+.icon-menu {
 		&__button-icon {
 				span {
 					position: relative;

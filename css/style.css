@@ -118,17 +118,17 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
 }
-.header__menu {
+.header__menu-icon {
   margin-right: 16px;
 }
 @media (min-width: 768px) {
-  .header__menu {
+  .header__menu-icon {
     position: relative;
     display: flex;
     align-items: center;
     margin-right: 32px;
   }
-  .header__menu::after {
+  .header__menu-icon::after {
     position: absolute;
     content: "";
     width: 2px;
@@ -171,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.menu__button-icon span {
+.icon-menu__button-icon span {
   position: relative;
   left: 27%;
   text-align: center;
@@ -180,17 +180,17 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #FFFFFF;
   border-radius: 1px;
 }
-.menu__button-icon span:first-child {
+.icon-menu__button-icon span:first-child {
   bottom: 5px;
   width: 18px;
   height: 2px;
 }
-.menu__button-icon span:last-child {
+.icon-menu__button-icon span:last-child {
   top: 5px;
   width: 14px;
   height: 2px;
 }
-.menu__button-icon:hover {
+.icon-menu__button-icon:hover {
   transform: scale(1) !important;
 }
 

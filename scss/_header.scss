@@ -20,24 +20,6 @@
 		display: inline-flex;
 		align-items: center;
 	}
-	&__menu-icon {
-		@media (min-width: 768px) {
-			position: relative;
-			display: flex;
-			align-items: center;
-			&::after{
-				position: absolute;
-				content:'';
-				width: 2px;
-				height: 32px;
-				right: 0;
-				background-color: #EAEAEA;
-				margin-right: -16px;
-			}
-			margin-right: 32px;
-		}
-		margin-right: 16px;
-	}
 	&__logo {
 		a {
 			display: inline-block;
@@ -71,6 +53,31 @@
 			display: block;
 		}
 		display: none;
+	}
+}
+
+.menu {
+	&__header {
+		display: flex;
+		align-items: center;
+	}
+	&__icon {
+		@media (min-width: 768px) {
+			position: relative;
+			display: flex;
+			align-items: center;
+			&::after{
+				position: absolute;
+				content:'';
+				width: 2px;
+				height: 32px;
+				right: 0;
+				background-color: #EAEAEA;
+				margin-right: -16px;
+			}
+			margin-right: 32px;
+		}
+		margin-right: 16px;
 	}
 }
 

@@ -56,6 +56,8 @@ html, body {
 
 input, button, textarea {
   font-family: inherit;
+  font-size: inherit;
+  background-color: inherit;
 }
 
 input::-ms-clear {
@@ -119,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__menu {
   margin-right: 16px;
 }
-@media (min-width: 500px) {
+@media (min-width: 768px) {
   .header__menu {
     position: relative;
     display: flex;
@@ -159,6 +161,14 @@ h1, h2, h3, h4, h5, h6 {
 .header img {
   width: 98px;
   height: 52px;
+}
+.header__phone, .header__message, .header__profile {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header__phone, .header__message, .header__profile {
+    display: block;
+  }
 }
 
 .menu__button-icon span {
@@ -201,30 +211,15 @@ h1, h2, h3, h4, h5, h6 {
 .phone__button-icon {
   background-image: url("../img/phone.svg");
 }
-@media (max-width: 380px) {
-  .phone__button-icon {
-    display: none !important;
-  }
-}
 
 .message__button-icon {
   background-image: url("../img/message.svg");
   margin-left: 16px;
 }
-@media (max-width: 429px) {
-  .message__button-icon {
-    display: none !important;
-  }
-}
 
 .profile__button-icon {
   background-image: url("../img/profile.svg");
   margin-left: 16px;
-}
-@media (max-width: 479px) {
-  .profile__button-icon {
-    display: none !important;
-  }
 }
 
 .wrapper {
@@ -266,40 +261,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .spoiler {
+  display: inline-flex;
   position: relative;
-  cursor: pointer;
 }
-.spoiler__arrow-top::after, .spoiler__arrow-top::before {
+.spoiler span {
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.arrow--spoiler::after, .arrow--spoiler::before {
   content: "";
+  display: block;
+  box-sizing: border-box;
   position: absolute;
-  height: 7px;
-  width: 1.5px;
-  background: #41F6D7;
-  border-radius: 2px;
-  top: 2px;
-  left: 10px;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #41F6D7;
+  border-top: 2px solid #41F6D7;
+  transform: rotate(135deg);
+  top: 5px;
+  left: -20px;
 }
-.spoiler__arrow-top::after {
-  transform: translate(-150%, 50%) rotate(-45deg);
-}
-.spoiler__arrow-top::before {
-  transform: translate(150%, 50%) rotate(45deg);
-}
-.spoiler__arrow-buttom::after, .spoiler__arrow-buttom::before {
-  content: "";
-  position: absolute;
-  height: 7px;
-  width: 1.5px;
-  background: #41F6D7;
-  border-radius: 5px;
-  top: 8px;
-  left: 10px;
-}
-.spoiler__arrow-buttom::after {
-  transform: translate(-150%, 50%) rotate(-45deg);
-}
-.spoiler__arrow-buttom::before {
-  transform: translate(150%, 50%) rotate(45deg);
+.arrow--spoiler::after {
+  top: 10px;
 }
 
 .button--round {
@@ -398,7 +384,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 32px;
 }
 
-.navbar-services__list {
+.page-services__navbar {
   display: flex;
   align-items: center;
   overflow: scroll;
@@ -406,24 +392,24 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: -16px;
   padding-right: 15px;
 }
-.navbar-services__list::-webkit-scrollbar {
+.page-services__navbar::-webkit-scrollbar {
   display: none;
 }
 @media (min-width: 320px) {
-  .navbar-services__list {
+  .page-services__navbar {
     margin-top: 16px;
     margin-bottom: 16px;
   }
 }
 @media (min-width: 768px) {
-  .navbar-services__list {
+  .page-services__navbar {
     margin-right: -24px;
     margin-top: 24px;
     margin-bottom: 24px;
   }
 }
 @media (min-width: 1100px) {
-  .navbar-services__list {
+  .page-services__navbar {
     margin-top: 0px;
     margin-right: 0px;
     flex-wrap: wrap;
@@ -432,11 +418,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media (min-width: 1120px) {
-  .navbar-services__list {
+  .page-services__navbar {
     margin-bottom: 0px;
   }
 }
+
 .navbar-services__item {
+  background-color: #F8F8F8;
   line-height: 24px;
   letter-spacing: -0.2px;
   color: #7E7E82;
@@ -526,35 +514,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-block-services__body {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   max-height: 208px;
   overflow: hidden;
   min-width: 278px;
   font-size: 14px;
-}
-@media (min-width: 320px) {
-  .text-block-services__body {
-    max-height: 99px;
-  }
+  line-height: 20px;
+  max-height: 80px;
 }
 @media (min-width: 510px) {
   .text-block-services__body {
-    max-height: 140px;
+    max-height: 120px;
   }
 }
 @media (min-width: 768px) {
   .text-block-services__body {
-    margin-bottom: 15px;
     min-width: 312px;
     max-height: 180px;
   }
 }
 .text-block-services__spoiler {
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  font-weight: 700;
-  position: relative;
-  padding-left: 29px;
+  margin-left: 29px;
 }
 @media (max-width: 720px) {
   .text-block-services__spoiler {

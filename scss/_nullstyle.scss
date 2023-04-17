@@ -32,6 +32,8 @@ html,body {
 }
 input,button,textarea {
 	font-family: inherit;
+	font-size: inherit;
+	background-color: inherit;
 }
 input::-ms-clear {
 	display: none;

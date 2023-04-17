@@ -49,45 +49,32 @@
 	}
 }
 .spoiler {
+	display: inline-flex;
 	position: relative;
-	cursor: pointer;
-	&__arrow-top {
-		&::after,
-		&::before {
-			content:'';
-			position: absolute;
-			height: 7px;
-			width: 1.5px;
-			background: #41F6D7;
-			border-radius: 2px;
-			top: 2px;
-			left: 10px;
-		}
-		&::after {
-  		transform: translate(-150%, 50%) rotate(-45deg);
-		}
-		&::before {
-			transform: translate(150%, 50%) rotate(45deg);
-		}
+	span {
+		line-height: 24px;
+		letter-spacing: -0.2px;
+		font-weight: 700;
+		font-size: 15px;
 	}
-	&__arrow-buttom {
-		&::after,
-		&::before {
-			content:'';
-			position: absolute;
-			height: 7px;
-			width: 1.5px;
-			background: #41F6D7;
-			border-radius: 5px;
-			top: 8px;
-			left: 10px;
-		}
-		&::after {
-  		transform: translate(-150%, 50%) rotate(-45deg);
-		}
-		&::before {
-			transform: translate(150%, 50%) rotate(45deg);
-		}
+}
+.arrow--spoiler {
+	&::after,
+	&::before {
+		content: "";
+		display: block;
+		box-sizing: border-box;
+		position: absolute;
+		width: 6px;
+		height: 6px;
+		border-right: 2px solid #41F6D7;
+		border-top: 2px solid #41F6D7;
+		transform: rotate(135deg);
+		top: 5px;
+		left: -20px;
+	}
+	&::after {
+		top: 10px;
 	}
 }
 .button--round {
@@ -185,11 +172,6 @@
 // Нав-бар
 .page-services {
 	&__navbar {
-		
-	}
-}
-.navbar-services {
-	&__list {
 		display: flex;
 		align-items: center;
 		overflow: scroll;
@@ -219,10 +201,13 @@
 			margin-bottom: 0px;
 		}
 	}
+}
+.navbar-services {
 	&__item {
 		&:not(:first-child) {
 			margin-left: 25px;
 		}
+		background-color: #F8F8F8;
 		line-height: 24px;
 		letter-spacing: -0.2px;
 		color: #7E7E82;
@@ -298,35 +283,28 @@
 }
 .text-block-services {
 	&__body {
-		margin-bottom: 30px;
+		margin-bottom: 15px;
 		max-height: 208px;
 		overflow: hidden;
 		min-width: 278px;
 		font-size: 14px;
-		@media (min-width:320px) {
-			max-height: 99px;
-		}
+		line-height: 20px;
+		max-height: 80px;
 		@media (min-width:510px) {
-			max-height: 140px;
+			max-height: 120px;
 		}
 		@media (min-width:768px) {
-			margin-bottom: 15px;
 			min-width: 312px;
 			max-height: 180px;
 		}
 	}
 	&__spoiler {
-		line-height: 24px;
-		letter-spacing: -0.2px;
-		font-weight: 700;
-		position: relative;
-		padding-left: 29px;
+		margin-left: 29px;
 		@media (max-width:720px) {
 			margin-bottom: 20px;
 		}
 	}
 }
-
 // </ОСНОВНОЙ БЛОК>==================================================================================================================================================================================================
 
 // <ПОДВАЛ> =========================================================================================================================================================================================================

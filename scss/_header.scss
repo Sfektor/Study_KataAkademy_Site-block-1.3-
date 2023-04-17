@@ -21,7 +21,7 @@
 		align-items: center;
 	}
 	&__menu {
-		@media (min-width: 500px) {
+		@media (min-width: 768px) {
 			position: relative;
 			display: flex;
 			align-items: center;
@@ -63,6 +63,14 @@
 	img{
 		width: 98px;
 		height: 52px;
+	}
+	&__phone,
+	&__message,
+	&__profile {
+		@media (min-width:768px) {
+			display: block;
+		}
+		display: none;
 	}
 }
 
@@ -111,26 +119,17 @@
 }
 .phone {
 	&__button-icon {
-		@media (max-width:380px) {
-			display: none !important;
-		}
 		background-image: url('../img/phone.svg');
 	}
 }
 .message {
 	&__button-icon {
-		@media (max-width:429px) {
-			display: none !important;
-		}
 		background-image: url('../img/message.svg');
 		margin-left: 16px;
 	}
 }
 .profile {
 	&__button-icon {
-		@media (max-width:479px) {
-			display: none !important;
-		}
 		background-image: url('../img/profile.svg');
 		margin-left: 16px;
 	}
